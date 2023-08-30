@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Vertos Home</string>
+    <string name="FindRoomsHeading">Fill the form and find new tenants</string>
+    <string name="back_button">Back button</string>
+    <string name="available_rooms">Available Rooms</string>
+    <string name="find_rooms">Add a new room</string>
+    <string name="room_type">Room Type</string>
+    <string name="submit">Submit</string>
+    <string name="home_image">home image</string>
+    <string name="default_web_client_id">526901222843-2mkr72lgrncivsnfmqt3kmlgfhpv9npr.apps.googleusercontent.com</string>
+    <string name="login">Login with Google</string>
+    <string name="login_with_google">Login with google</string>
+    <string name="login_message">Welcome to VertosHome! Sign in to explore your smart home journey.</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="address">Address</string>
+    <string name="enter_room_rent">Enter Room Rent (in Rs.)</string>
+    <string name="enter_apartment_name">Enter apartment name</string>
+    <string name="no_rooms_available">No Rooms Available!</string>
+</resources>

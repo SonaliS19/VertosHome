@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "526901222843",
+    "project_id": "vertosrooms",
+    "storage_bucket": "vertosrooms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526901222843:android:5167346bd27fd864c2f89e",
+        "android_client_info": {
+          "package_name": "com.example.vertoshome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526901222843-2mkr72lgrncivsnfmqt3kmlgfhpv9npr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc6d4QTU1lxkEY_GB3ohfgSB-7e88Ec0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526901222843-2mkr72lgrncivsnfmqt3kmlgfhpv9npr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
