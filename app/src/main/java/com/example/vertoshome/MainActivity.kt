@@ -21,12 +21,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Set the status bar color
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.statusBarColor = resources.getColor(R.color.gray, theme)
         setContentView(R.layout.activity_main)
 
+        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
+        // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail().build()
@@ -34,23 +37,34 @@ class MainActivity : AppCompatActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         // Check if the user is already signed in
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-            // User is already signed in, redirect to DashboardActivity
-            val intent = Intent(this, DashboardActivity::class.java)
-            intent.putExtra("user", currentUser)
-            startActivity(intent)
-            finish()
-        }
+//        val currentUser = auth.currentUser
+//        if (currentUser != null) {
+//            // User is already signed in, redirect to DashboardActivity
+//            val intent = Intent(this, DashboardActivity::class.java)
+//            intent.putExtra("user", currentUser)
+//            startActivity(intent)
+//            finish()
+//        }
     }
 
     private var RC_SIGN_IN: Int = 40
+    // Method to initiate Google Sign In
     fun loginUser(view: View) {
         Log.d("MainActivity", "Login User")
-        val intent = mGoogleSignInClient.signInIntent
+//        val intent = mGoogleSignInClient.signInIntent
         startActivityForResult(intent, RC_SIGN_IN)
-    }
+        //         Check if the user is already signed in
+        val currentUser = auth.currentUser
+        // User is already signed in, redirect to DashboardActivity
+        val intent = Intent(this, DashboardActivity::class.java)
+        intent.putExtra("user", currentUser)
+        startActivity(intent)
+        finish()
 
+
+
+    }
+    // Handle the result of the Google Sign In
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -65,7 +79,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+    // Authenticate with Firebase using Google credentials
     private fun firebaseAuth(idToken: String) {
         val authCredential = GoogleAuthProvider.getCredential(idToken, null)
 
@@ -78,13 +92,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+    // Redirect to the DashboardActivity
     private fun redirectToDashboard(user: FirebaseUser?) {
         if (user != null) {
             val intent = Intent(this, DashboardActivity::class.java)
             intent.putExtra("user", user)
             startActivity(intent)
         } else {
+
+
             Toast.makeText(this, "No User", Toast.LENGTH_SHORT).show()
         }
     }

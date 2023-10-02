@@ -7,6 +7,7 @@
     tools:context=".DashboardActivity">
 
     <!-- Welcome Text -->
+
     <TextView
         android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
@@ -50,6 +51,12 @@
         app:layout_constraintTop_toBottomOf="@id/subHeading" />
 
     <!-- Available Rooms button -->
+
+    <!-- Post com.example.vertoshome.Room Button -->
+
+    <!--    logout button -->
+
+    <!-- Available Rooms button -->
     <Button
         android:id="@+id/roomsButton"
         android:layout_width="200dp"
@@ -79,7 +86,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/roomsButton" />
 
-    <!--    logout button -->
     <Button
         android:id="@+id/logoutButton"
         android:layout_width="200dp"
@@ -92,5 +98,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postRoomButton" />
+        app:layout_constraintTop_toBottomOf="@+id/postRoomButton"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,12 +17,13 @@ class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Set the status bar color
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.statusBarColor = resources.getColor(R.color.gray, theme)
         setContentView(R.layout.activity_dashboard)
-
+        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
-
+        // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail().build()
@@ -42,7 +43,7 @@ class DashboardActivity : AppCompatActivity() {
         val intent = Intent(this, AddRoom::class.java)
         startActivity(intent)
     }
-
+    // Sign out the user
     private fun signOut() {
         // Sign out from Firebase Authentication
         auth.signOut()
@@ -54,6 +55,7 @@ class DashboardActivity : AppCompatActivity() {
         }
     }
 
+    // Redirect to the login screen
     private fun redirectToLoginScreen() {
         // You can implement the logic here to redirect the user to the login screen
         // For example, if you have a LoginActivity, you can use the following code:
@@ -61,7 +63,7 @@ class DashboardActivity : AppCompatActivity() {
         startActivity(intent)
         finish() // Optional: Finish the current MainActivity so the user can't go back to it without signing in again.
     }
-
+    // Handle logout button click
     fun logout(view: View) {
         signOut()
     }
